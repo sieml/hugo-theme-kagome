@@ -40,7 +40,8 @@
   {{ $options := dict "targetPath" "assets/css/style.min.css" "outputStyle" "compressed" }}
   {{ $style := $sass | resources.ToCSS $options | resources.Fingerprint "sha256" }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
-
+  <link rel="icon" href="https://sieml.github.io/liy/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="https://sieml.github.io/liy/images/favicon.ico" type="image/x-icon" />
   {{/* script */}}
   {{- $js := resources.Get "ts/main.ts" -}}
   {{- $opts := dict "targetPath" "assets/js/main.min.js" "minify" hugo.IsProduction -}}
